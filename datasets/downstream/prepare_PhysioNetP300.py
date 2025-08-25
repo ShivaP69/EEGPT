@@ -44,7 +44,7 @@ for sub in [2,3,4,5,6,7,9,11]:
             # -- save
             x = torch.tensor(d*1e3)
             y = label
-            spath = dataset_fold+f'{y}/'
-            os.makedirs(path,exist_ok=True)
-            spath = spath + f'{i}.sub{sub}'
+            spath = os.path.join(dataset_fold, f'{y}')
+            os.makedirs(spath, exist_ok=True)  # create the correct folder
+            spath = os.path.join(spath, f'{i}.sub{sub}.pt')  # add .pt for PyTorch files
             torch.save(x, spath)
