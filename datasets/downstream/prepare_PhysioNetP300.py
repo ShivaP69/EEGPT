@@ -14,7 +14,8 @@ tmin=-0.1
 tmax=2
 for sub in [2,3,4,5,6,7,9,11]:
 
-    path = "erp-based-brain-computer-interface-recordings-1.0.0/files/s{:02d}".format(sub)
+    #path = "erp-based-brain-computer-interface-recordings-1.0.0/files/s{:02d}".format(sub)
+    path="erp-based-brain-computer-interface-recordings-1.0.0/files/erpbci/1.0.0/s{:02d}".format(sub) # based on the current state of the dataset
     for file in os.listdir(path):
         if not file.endswith(".edf"):continue
         raw = mne.io.read_raw_edf(os.path.join(path, file))
